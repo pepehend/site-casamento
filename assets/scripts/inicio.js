@@ -31,18 +31,19 @@ function montarProgramacao() {
 }
 
 function montarFotos() {
-  for (const arquivo of CONFIG.fotos) {
+  for (const foto of CONFIG.fotos) {
     const moldura = document.createElement("figure");
     moldura.className = "foto";
     const img = document.createElement("img");
-    img.alt = CONFIG.noivos.join(" e ");
+    img.alt = foto.descricao;
+    img.style.objectPosition = foto.foco;
     img.loading = "lazy";
     // Enquanto a foto não estiver em assets/img, a moldura mostra um aviso.
     img.addEventListener("error", () => {
       moldura.classList.add("vazia");
       moldura.textContent = "Foto em breve";
     });
-    img.src = "assets/img/" + arquivo;
+    img.src = "assets/img/" + foto.arquivo;
     moldura.append(img);
     $("fotos").append(moldura);
   }

@@ -18,7 +18,12 @@ const CONFIG = {
     { hora: "Logo após", titulo: "Recepção", nota: "No mesmo local, assim que a cerimônia terminar." },
     { hora: "19h", titulo: "Jantar", nota: "Vamos à mesa para celebrar juntos." }
   ],
-  fotos: ["foto-1.jpg", "foto-2.jpg", "foto-3.jpg"], // arquivos dentro de assets/img
+  // Arquivos dentro de assets/img. "foco" define o que aparece quando a foto é cortada.
+  fotos: [
+    { arquivo: "foto-1.jpg", foco: "50% 43%", descricao: "Pedro e Ana Clara abraçados, olhando um para o outro" },
+    { arquivo: "foto-2.jpg", foco: "50% 33%", descricao: "Pedro e Ana Clara sorrindo, com a aliança na mão dela" },
+    { arquivo: "foto-3.jpg", foco: "50% 26%", descricao: "Pedro e Ana Clara com o buquê, atrás de um bolo branco" }
+  ],
   presenca: {
     url: "https://script.google.com/macros/s/AKfycbzFPQ_y6P9YhNXHReLSt5rQ99y9OVlUYeMVqbc9-eXCy3tH6wQVOzExCgYPQQNznPY/exec", // endereço do Apps Script. Vazio mostra o botão do WhatsApp
     prazo: "2027-02-28" // data limite para responder
