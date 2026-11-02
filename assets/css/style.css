@@ -181,7 +181,7 @@ html { scroll-padding-top: 72px; }
 .foto img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .foto.vazia { display: grid; place-items: center; color: var(--muted); font-size: .92rem; }
 
-.programa { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.programa { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
 .programa li { display: grid; align-content: start; gap: 2px; padding-block-start: 12px; border-top: 2px solid var(--cobalt); }
 .programa b { font: italic 500 1.75rem/1.2 var(--display); color: var(--cobalt); }
 .programa strong { font-size: 1.0625rem; }
