@@ -24,6 +24,7 @@ function montarHistoria() {
   }
   for (const marco of CONFIG.historia.marcos) {
     const item = document.createElement("li");
+    item.classList.toggle("destaque", Boolean(marco.destaque));
     const data = document.createElement("b");
     data.textContent = marco.data;
     const titulo = document.createElement("span");

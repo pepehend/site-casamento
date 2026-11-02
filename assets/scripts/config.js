@@ -27,7 +27,7 @@ const CONFIG = {
       { data: "17/08/2024", titulo: "O primeiro encontro" },
       { data: "01/09/2024", titulo: "O pedido de namoro" },
       { data: "01/08/2026", titulo: "O pedido de casamento" },
-      { data: "22/05/2027", titulo: "O grande dia" }
+      { data: "22/05/2027", titulo: "O grande dia", destaque: true }
     ]
   },
   programacao: [
@@ -56,7 +56,7 @@ const CONFIG = {
   ],
   // {prazo} é trocado pela data limite de confirmação.
   perguntas: [
-    { pergunta: "Crianças são bem-vindas?", resposta: "Sim! As crianças são muito bem-vindas." },
+    { pergunta: "Crianças são bem-vindas?", resposta: "Sim! As crianças são muito bem-vindas. Quem tem menos de 12 anos não precisa ser informado na confirmação de presença." },
     { pergunta: "Posso levar um acompanhante?", resposta: "Sim, desde que seja sua esposa, seu marido ou seu filho." },
     { pergunta: "Qual é o traje?", resposta: "Sinta-se à vontade para escolher o que vestir. O importante é todos saírem bonitos nas fotos." },
     { pergunta: "Tem estacionamento?", resposta: "Sim, temos estacionamento logo em frente ao espaço." },

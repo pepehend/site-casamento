@@ -187,6 +187,9 @@ html { scroll-padding-top: 72px; }
 .marcos li { display: grid; gap: 1px; padding-inline-start: 16px; }
 .marcos b { font: italic 500 1.25rem/1.2 var(--display); color: var(--cobalt); font-variant-numeric: tabular-nums; }
 .marcos span { color: var(--muted); font-size: .94rem; }
+.marcos .destaque { margin-inline-start: -2px; padding-block: 14px; border-radius: 0 8px 8px 0; background: var(--cobalt); }
+.marcos .destaque b { font-size: 1.75rem; font-weight: 700; color: var(--cobalt-ink); }
+.marcos .destaque span { color: var(--cobalt-ink); font-weight: 600; }
 
 .programa { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
 .programa li { display: grid; align-content: start; gap: 2px; padding-block-start: 12px; border-top: 2px solid var(--cobalt); }
