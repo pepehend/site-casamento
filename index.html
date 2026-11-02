@@ -114,14 +114,43 @@
     </div>
   </section>
 
-  <section class="secao" id="programacao" aria-labelledby="titulo-programacao">
+  <section class="secao" id="mural" aria-labelledby="titulo-mural">
+    <div class="wrap mural">
+      <div class="mural-recados">
+        <h2 id="titulo-mural">Mural de recados</h2>
+        <p>Deixe uma mensagem para os noivos. Ela aparece aqui depois da nossa aprovação.</p>
+        <p class="mural-vazio" id="mural-vazio">Seja a primeira pessoa a deixar um recado.</p>
+        <ul class="mural-lista" id="mural-lista"></ul>
+      </div>
+      <div class="presenca-area">
+        <form id="mural-form" novalidate>
+          <label for="mural-nome">Seu nome
+            <input id="mural-nome" autocomplete="name" maxlength="60" required>
+          </label>
+          <label for="mural-recado">Seu recado
+            <textarea id="mural-recado" rows="4" maxlength="300" required></textarea>
+          </label>
+          <div class="presenca-robo" aria-hidden="true">
+            <label for="mural-site">Não preencha este campo
+              <input id="mural-site" tabindex="-1" autocomplete="off">
+            </label>
+          </div>
+          <button class="btn" id="mural-enviar" type="submit">Enviar recado</button>
+          <p class="erro" id="mural-erro" role="alert" hidden></p>
+        </form>
+        <p class="presenca-sucesso" id="mural-sucesso" role="status" hidden>Recado enviado! Ele vai aparecer aqui depois da nossa aprovação.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao faixa" id="programacao" aria-labelledby="titulo-programacao">
     <div class="wrap">
       <h2 id="titulo-programacao">Programação</h2>
       <ol class="programa" id="programa"></ol>
     </div>
   </section>
 
-  <section class="secao faixa" id="local" aria-labelledby="titulo-local">
+  <section class="secao" id="local" aria-labelledby="titulo-local">
     <div class="wrap local">
       <div class="local-info">
         <h2 id="titulo-local">Onde vai ser</h2>
@@ -149,7 +178,7 @@
     </div>
   </section>
 
-  <section class="secao" id="hospedagem" aria-labelledby="titulo-hospedagem">
+  <section class="secao faixa" id="hospedagem" aria-labelledby="titulo-hospedagem">
     <div class="wrap">
       <div class="recado-texto">
         <h2 id="titulo-hospedagem">Onde ficar</h2>
@@ -159,7 +188,7 @@
     </div>
   </section>
 
-  <section class="secao faixa" id="presenca" aria-labelledby="titulo-presenca">
+  <section class="secao" id="presenca" aria-labelledby="titulo-presenca">
     <div class="wrap presenca">
       <div class="recado-texto">
         <h2 id="titulo-presenca">Confirme sua presença</h2>
@@ -208,42 +237,13 @@
     </div>
   </section>
 
-  <section class="secao" id="duvidas" aria-labelledby="titulo-duvidas">
+  <section class="secao faixa" id="duvidas" aria-labelledby="titulo-duvidas">
     <div class="wrap duvidas">
       <div class="recado-texto">
         <h2 id="titulo-duvidas">Perguntas frequentes</h2>
         <p>Reunimos aqui o que os convidados mais perguntam.</p>
       </div>
       <div class="perguntas" id="perguntas"></div>
-    </div>
-  </section>
-
-  <section class="secao faixa" id="mural" aria-labelledby="titulo-mural">
-    <div class="wrap mural">
-      <div class="mural-recados">
-        <h2 id="titulo-mural">Mural de recados</h2>
-        <p>Deixe uma mensagem para os noivos. Ela aparece aqui depois da nossa aprovação.</p>
-        <p class="mural-vazio" id="mural-vazio">Seja a primeira pessoa a deixar um recado.</p>
-        <ul class="mural-lista" id="mural-lista"></ul>
-      </div>
-      <div class="presenca-area">
-        <form id="mural-form" novalidate>
-          <label for="mural-nome">Seu nome
-            <input id="mural-nome" autocomplete="name" maxlength="60" required>
-          </label>
-          <label for="mural-recado">Seu recado
-            <textarea id="mural-recado" rows="4" maxlength="300" required></textarea>
-          </label>
-          <div class="presenca-robo" aria-hidden="true">
-            <label for="mural-site">Não preencha este campo
-              <input id="mural-site" tabindex="-1" autocomplete="off">
-            </label>
-          </div>
-          <button class="btn" id="mural-enviar" type="submit">Enviar recado</button>
-          <p class="erro" id="mural-erro" role="alert" hidden></p>
-        </form>
-        <p class="presenca-sucesso" id="mural-sucesso" role="status" hidden>Recado enviado! Ele vai aparecer aqui depois da nossa aprovação.</p>
-      </div>
     </div>
   </section>
 

@@ -239,7 +239,7 @@ html { scroll-padding-top: 72px; }
 .mural-recados { display: grid; gap: 12px; }
 .mural-vazio { color: var(--muted); font-style: italic; }
 .mural-lista { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 12px; max-height: 520px; overflow-y: auto; }
-.mural-lista li { display: grid; gap: 6px; padding: 14px 16px; border-radius: 8px; background: var(--bg); }
+.mural-lista li { display: grid; gap: 6px; padding: 14px 16px; border-radius: 8px; background: var(--tint); }
 .mural-lista p { overflow-wrap: anywhere; }
 .mural-lista strong { color: var(--cobalt); font-size: .92rem; }
 .presenca-robo { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
