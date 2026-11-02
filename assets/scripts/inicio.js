@@ -16,6 +16,23 @@ function montarCabecalho() {
   $("faltam").textContent = dias === 1 ? "Falta 1 dia" : "Faltam " + dias.toLocaleString("pt-BR") + " dias";
 }
 
+function montarHistoria() {
+  for (const texto of CONFIG.historia.paragrafos) {
+    const paragrafo = document.createElement("p");
+    paragrafo.textContent = texto;
+    $("historia-texto").append(paragrafo);
+  }
+  for (const marco of CONFIG.historia.marcos) {
+    const item = document.createElement("li");
+    const data = document.createElement("b");
+    data.textContent = marco.data;
+    const titulo = document.createElement("span");
+    titulo.textContent = marco.titulo;
+    item.append(data, titulo);
+    $("marcos").append(item);
+  }
+}
+
 function montarProgramacao() {
   for (const etapa of CONFIG.programacao) {
     const item = document.createElement("li");
@@ -140,6 +157,7 @@ function montarContato() {
 }
 
 montarCabecalho();
+montarHistoria();
 montarProgramacao();
 montarFotos();
 montarLocal();

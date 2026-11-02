@@ -13,6 +13,23 @@ const CONFIG = {
     fim: "20270523T020000Z",    // 23h em Brasília, fim da festa. O arquivo assets/casamento.ics tem os mesmos horários
     detalhes: "Cerimônia às 15h30, recepção logo após, no mesmo local, jantar às 19h e festa das 20h às 23h."
   },
+  historia: {
+    paragrafos: [
+      "Tudo começou em uma tarde de terça-feira, em 23 de julho de 2024. Pedro e Ana Clara se viram pela primeira vez por intermédio da avó dele, em um encontro breve, sem conversa e sem nenhuma pretensão.",
+      "Três dias depois, um churrasco mudou tudo. A mesma avó convidou Ana Clara e a família dela para se juntarem à festa, e a tia Paola deu aquela ajuda. Entre muitas risadas, os dois se conheceram melhor e trocaram o Instagram.",
+      "Ela de Três Marias, ele de Ribeirão das Neves: o que poderia dar errado? As conversas continuaram por telefone, e em 17 de agosto veio o primeiro encontro, com direito a buquê de flores, porque o noivo faz o tipo romântico. Foi naquele dia que Pedro se apaixonou e teve certeza de quem queria ao seu lado.",
+      "Em 1º de setembro de 2024, veio o pedido de namoro. Desde então, o amor e o companheirismo só aumentaram, entre viagens, refeições, muitas risadas e tudo o que aprenderam um sobre o outro.",
+      "Em 1º de agosto de 2026, Pedro apertou o peito mais uma vez e pediu Ana Clara em casamento. Agora, ele não poderia ser mais grato por chamá-la de noiva e, em breve, de esposa."
+    ],
+    marcos: [
+      { data: "23/07/2024", titulo: "A primeira vez" },
+      { data: "26/07/2024", titulo: "O churrasco" },
+      { data: "17/08/2024", titulo: "O primeiro encontro" },
+      { data: "01/09/2024", titulo: "O pedido de namoro" },
+      { data: "01/08/2026", titulo: "O pedido de casamento" },
+      { data: "22/05/2027", titulo: "O grande dia" }
+    ]
+  },
   programacao: [
     { hora: "15h30", titulo: "Cerimônia", nota: "O momento mais esperado do dia." },
     { hora: "Logo após", titulo: "Recepção", nota: "No mesmo local, assim que a cerimônia terminar." },

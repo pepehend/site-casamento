@@ -181,6 +181,13 @@ html { scroll-padding-top: 72px; }
 .foto img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .foto.vazia { display: grid; place-items: center; color: var(--muted); font-size: .92rem; }
 
+.historia { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 40px; align-items: start; }
+.historia-texto { display: grid; gap: 12px; }
+.marcos { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; border-left: 2px solid var(--cobalt); }
+.marcos li { display: grid; gap: 1px; padding-inline-start: 16px; }
+.marcos b { font: italic 500 1.25rem/1.2 var(--display); color: var(--cobalt); font-variant-numeric: tabular-nums; }
+.marcos span { color: var(--muted); font-size: .94rem; }
+
 .programa { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
 .programa li { display: grid; align-content: start; gap: 2px; padding-block-start: 12px; border-top: 2px solid var(--cobalt); }
 .programa b { font: italic 500 1.75rem/1.2 var(--display); color: var(--cobalt); }
@@ -201,7 +208,7 @@ html { scroll-padding-top: 72px; }
 .mapa iframe { position: relative; display: block; width: 100%; height: 100%; border: 0; }
 
 .hospedagens { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.hospedagens li { display: grid; grid-template-rows: auto 1fr auto auto; gap: 8px; justify-items: start; padding: 16px; border-radius: 8px; background: var(--bg); }
+.hospedagens li { display: grid; grid-template-rows: auto 1fr auto auto; gap: 8px; justify-items: start; padding: 16px; border-radius: 8px; background: var(--tint); }
 .hospedagens h3 { font-size: 1.0625rem; font-weight: 600; }
 .hospedagens p { color: var(--muted); font-size: .92rem; }
 .hospedagens .valor { color: var(--ink); text-decoration: none; }
@@ -260,11 +267,10 @@ html { scroll-padding-top: 72px; }
   .steps ol, .gifts { grid-template-columns: minmax(0, 1fr); }
   .livre form { grid-template-columns: minmax(0, 1fr); }
   .secao .wrap { padding-block: 40px; }
-  .local, .contato, .presenca, .programa, .duvidas { grid-template-columns: minmax(0, 1fr); }
+  .local, .contato, .presenca, .programa, .duvidas, .historia, .hospedagens { grid-template-columns: minmax(0, 1fr); }
   .contato-pessoa { justify-items: start; }
 }
 @media (max-width: 760px) {
-  .hospedagens { grid-template-columns: minmax(0, 1fr); }
   .menu-botao {
     display: grid; place-items: center; width: 40px; height: 40px; padding: 0;
     border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--ink); cursor: pointer;
