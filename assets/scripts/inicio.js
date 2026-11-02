@@ -84,6 +84,28 @@ function montarLocal() {
   if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) $("agenda-google").removeAttribute("target");
 }
 
+function montarHospedagens() {
+  for (const lugar of CONFIG.hospedagens) {
+    const item = document.createElement("li");
+    const nome = document.createElement("h3");
+    nome.textContent = lugar.nome;
+    const local = document.createElement("p");
+    local.textContent = lugar.local + ", Três Marias - MG";
+    const telefone = document.createElement("a");
+    telefone.className = "valor";
+    telefone.textContent = lugar.telefone;
+    telefone.href = "tel:+55" + lugar.telefone.replace(/[^0-9]/g, "");
+    const mapa = document.createElement("a");
+    mapa.className = "btn ghost";
+    mapa.textContent = "Ver no mapa";
+    mapa.target = "_blank";
+    mapa.rel = "noopener";
+    mapa.href = lugar.mapa;
+    item.append(nome, local, telefone, mapa);
+    $("hospedagens").append(item);
+  }
+}
+
 function montarPerguntas() {
   const prazo = new Date(CONFIG.presenca.prazo + "T12:00:00").toLocaleDateString("pt-BR", { dateStyle: "long" });
   for (const item of CONFIG.perguntas) {
@@ -121,5 +143,6 @@ montarCabecalho();
 montarProgramacao();
 montarFotos();
 montarLocal();
+montarHospedagens();
 montarPerguntas();
 montarContato();
