@@ -219,9 +219,9 @@ html { scroll-padding-top: 72px; }
 .presenca { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; align-items: start; }
 .presenca-area { display: grid; gap: 12px; padding: 24px; border-radius: 8px; background: var(--tint); }
 #presenca-whatsapp { display: grid; gap: 12px; justify-items: start; }
-#presenca-form { display: grid; gap: 16px; }
-#presenca-form label, #presenca-form legend { font-size: .94rem; font-weight: 500; }
-#presenca-form > label { display: grid; gap: 4px; }
+#presenca-form, #mural-form { display: grid; gap: 16px; }
+#presenca-form label, #presenca-form legend, #mural-form label { font-size: .94rem; font-weight: 500; }
+#presenca-form > label, #mural-form > label { display: grid; gap: 4px; }
 #presenca-acompanhantes { display: grid; gap: 10px; }
 #presenca-acompanhantes p { font-size: .94rem; font-weight: 500; }
 .acompanhante { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 10px; }
@@ -229,12 +229,19 @@ html { scroll-padding-top: 72px; }
 #presenca-form fieldset { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0; padding: 0; border: 0; }
 #presenca-form legend { padding: 0; margin-block-end: 6px; }
 #presenca-form .opcao { display: flex; align-items: center; gap: 6px; font-weight: 400; }
-#presenca-form input:not([type="radio"]), #presenca-form textarea, #presenca-form select {
+#presenca-form input:not([type="radio"]), #presenca-form textarea, #presenca-form select, #mural-form input, #mural-form textarea {
   width: 100%; min-height: 40px; padding: 8px 10px; border-radius: 6px; font-weight: 400;
   border: 1px solid var(--muted); background: var(--bg); resize: vertical;
 }
 #presenca-form input[type="radio"] { width: 18px; height: 18px; margin: 0; accent-color: var(--cobalt); }
-#presenca-form .btn { justify-self: start; }
+#presenca-form .btn, #mural-form .btn { justify-self: start; }
+.mural { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; align-items: start; }
+.mural-recados { display: grid; gap: 12px; }
+.mural-vazio { color: var(--muted); font-style: italic; }
+.mural-lista { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 12px; max-height: 520px; overflow-y: auto; }
+.mural-lista li { display: grid; gap: 6px; padding: 14px 16px; border-radius: 8px; background: var(--bg); }
+.mural-lista p { overflow-wrap: anywhere; }
+.mural-lista strong { color: var(--cobalt); font-size: .92rem; }
 .presenca-robo { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .presenca-sucesso { font: italic 500 1.5rem/1.3 var(--display); color: var(--cobalt); }
 
@@ -270,7 +277,7 @@ html { scroll-padding-top: 72px; }
   .steps ol, .gifts { grid-template-columns: minmax(0, 1fr); }
   .livre form { grid-template-columns: minmax(0, 1fr); }
   .secao .wrap { padding-block: 40px; }
-  .local, .contato, .presenca, .programa, .duvidas, .historia, .hospedagens { grid-template-columns: minmax(0, 1fr); }
+  .local, .contato, .presenca, .programa, .duvidas, .historia, .hospedagens, .mural { grid-template-columns: minmax(0, 1fr); }
   .contato-pessoa { justify-items: start; }
 }
 @media (max-width: 760px) {
