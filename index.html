@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Casamento de Pedro e Ana Clara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/scripts/tema.js"></script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="marca" href="#top"><img src="assets/img/logo.png" alt="Pedro e Ana Clara, página inicial" width="567" height="498"></a>
+    <div class="nav-links" id="menu-links">
+      <a href="#top" aria-current="page">Início</a>
+      <a href="#local">Local</a>
+      <a href="#presenca">Presença</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#contato">Contato</a>
+      <a href="presentes.html">Presentes</a>
+    </div>
+    <div class="nav-acoes">
+      <button class="tema-botao" id="tema-botao" type="button" role="switch" aria-checked="false" aria-label="Modo escuro">
+        <svg class="tema-icone lua" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 15.5A8.5 8.5 0 0 1 8.5 4a9 9 0 1 0 11.5 11.5z"></path>
+          <path d="M0-2 .6-.6 2-.6.9.3 1.3 1.7 0 .9-1.3 1.7-.9.3-2-.6-.6-.6z" transform="translate(14 5.5)"></path>
+          <path d="M0-2 .6-.6 2-.6.9.3 1.3 1.7 0 .9-1.3 1.7-.9.3-2-.6-.6-.6z" transform="translate(19 9)"></path>
+          <path d="M0-2 .6-.6 2-.6.9.3 1.3 1.7 0 .9-1.3 1.7-.9.3-2-.6-.6-.6z" transform="translate(13 11) scale(.8)"></path>
+        </svg>
+        <svg class="tema-icone sol" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"></circle>
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path>
+        </svg>
+        <span class="tema-bola"></span>
+      </button>
+      <button class="menu-botao" id="menu-botao" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path class="abre" d="M4 7h16M4 12h16M4 17h16"></path>
+          <path class="fecha" d="M6 6l12 12M18 6 6 18"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" id="quando"></p>
+      <h1 id="noivos"></h1>
+      <p class="lead">Que alegria ter você aqui. Vamos nos casar e queremos dividir esse dia com quem faz parte da nossa história.</p>
+      <p class="faltam" id="faltam" hidden></p>
+      <div class="hero-acoes">
+        <a class="btn" href="presentes.html">Ver lista de presentes</a>
+        <a class="btn ghost" href="#local">Como chegar</a>
+      </div>
+    </div>
+    <svg class="arch" aria-hidden="true">
+      <defs>
+        <pattern id="azulejo" width="72" height="72" patternUnits="userSpaceOnUse">
+          <rect class="tile-line" x="0" y="0" width="72" height="72" stroke-width="1"></rect>
+          <circle class="tile-line" cx="0" cy="0" r="26"></circle>
+          <circle class="tile-line" cx="72" cy="0" r="26"></circle>
+          <circle class="tile-line" cx="0" cy="72" r="26"></circle>
+          <circle class="tile-line" cx="72" cy="72" r="26"></circle>
+          <path class="tile-fill" d="M36 12 C44 26 44 28 60 36 C44 44 44 46 36 60 C28 46 28 44 12 36 C28 28 28 26 36 12 Z"></path>
+          <circle cx="36" cy="36" r="5" fill="var(--tile-bg)"></circle>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#azulejo)"></rect>
+    </svg>
+  </div>
+</header>
+
+<main>
+  <section class="secao" aria-labelledby="titulo-recepcao">
+    <div class="wrap recepcao">
+      <div class="recado-texto">
+        <h2 id="titulo-recepcao">Sejam bem-vindos</h2>
+        <p>Este site é o nosso cantinho para reunir tudo sobre o grande dia: onde vai ser, como chegar e como falar com a gente.</p>
+        <p>Preparamos cada detalhe pensando em vocês. Esperamos que venham com o coração leve e os sapatos prontos para dançar.</p>
+      </div>
+      <div class="fotos" id="fotos"></div>
+    </div>
+  </section>
+
+  <section class="secao faixa" id="programacao" aria-labelledby="titulo-programacao">
+    <div class="wrap">
+      <h2 id="titulo-programacao">Programação</h2>
+      <ol class="programa" id="programa"></ol>
+    </div>
+  </section>
+
+  <section class="secao" id="local" aria-labelledby="titulo-local">
+    <div class="wrap local">
+      <div class="local-info">
+        <h2 id="titulo-local">Onde vai ser</h2>
+        <dl>
+          <div><dt>Data</dt><dd id="local-data"></dd></div>
+          <div><dt>Cerimônia</dt><dd id="local-horario"></dd></div>
+          <div><dt>Local</dt><dd><span id="local-nome"></span><small id="local-endereco"></small></dd></div>
+        </dl>
+        <div class="hero-acoes">
+          <a class="btn" id="abrir-maps" target="_blank" rel="noopener">Abrir no Google Maps</a>
+          <a class="btn ghost" id="abrir-waze" target="_blank" rel="noopener">Abrir no Waze</a>
+        </div>
+        <div class="agenda">
+          <p>Salve a data na sua agenda</p>
+          <div class="hero-acoes">
+            <a class="btn" id="agenda-google" target="_blank" rel="noopener">Google Agenda</a>
+            <a class="btn ghost" href="assets/casamento.ics" download="casamento-pedro-e-ana-clara.ics">iPhone ou Outlook</a>
+          </div>
+        </div>
+      </div>
+      <div class="mapa">
+        <p>Use os botões para abrir o mapa.</p>
+        <iframe id="mapa" title="Mapa do local do casamento" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao faixa" id="presenca" aria-labelledby="titulo-presenca">
+    <div class="wrap presenca">
+      <div class="recado-texto">
+        <h2 id="titulo-presenca">Confirme sua presença</h2>
+        <p>Sua resposta ajuda a gente a preparar tudo com carinho para receber você.</p>
+        <p id="presenca-prazo"></p>
+      </div>
+      <div class="presenca-area">
+        <div id="presenca-whatsapp">
+          <p>Para confirmar, chame a gente no WhatsApp.</p>
+          <a class="btn" href="#contato">Confirmar pelo WhatsApp</a>
+        </div>
+        <form id="presenca-form" novalidate hidden>
+          <label for="presenca-nome">Seu nome
+            <input id="presenca-nome" autocomplete="name" maxlength="100" required>
+          </label>
+          <label for="presenca-celular">Celular com DDD
+            <input id="presenca-celular" type="tel" inputmode="numeric" autocomplete="tel" maxlength="20" placeholder="(31) 99999-9999" required>
+          </label>
+          <fieldset>
+            <legend>Você vai comparecer?</legend>
+            <label class="opcao"><input type="radio" name="comparecer" value="sim"> Sim, vou</label>
+            <label class="opcao"><input type="radio" name="comparecer" value="nao"> Não poderei ir</label>
+          </fieldset>
+          <label for="presenca-quantos" id="presenca-pessoas" hidden>Quantos acompanhantes vêm com você?
+            <input id="presenca-quantos" type="number" inputmode="numeric" min="0" max="9" value="0">
+          </label>
+          <div id="presenca-acompanhantes" hidden>
+            <p>Dados de cada acompanhante, incluindo crianças</p>
+          </div>
+          <label for="presenca-restricoes" id="presenca-comida" hidden>Alguma restrição alimentar? (opcional)
+            <input id="presenca-restricoes" maxlength="200">
+          </label>
+          <label for="presenca-mensagem">Mensagem para os noivos (opcional)
+            <textarea id="presenca-mensagem" rows="3" maxlength="500"></textarea>
+          </label>
+          <div class="presenca-robo" aria-hidden="true">
+            <label for="presenca-site">Não preencha este campo
+              <input id="presenca-site" tabindex="-1" autocomplete="off">
+            </label>
+          </div>
+          <button class="btn" id="presenca-enviar" type="submit">Enviar resposta</button>
+          <p class="erro" id="presenca-erro" role="alert" hidden></p>
+        </form>
+        <p class="presenca-sucesso" id="presenca-sucesso" role="status" hidden></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="duvidas" aria-labelledby="titulo-duvidas">
+    <div class="wrap duvidas">
+      <div class="recado-texto">
+        <h2 id="titulo-duvidas">Perguntas frequentes</h2>
+        <p>Reunimos aqui o que os convidados mais perguntam.</p>
+      </div>
+      <div class="perguntas" id="perguntas"></div>
+    </div>
+  </section>
+
+  <section class="secao faixa" id="contato" aria-labelledby="titulo-contato">
+    <div class="wrap contato">
+      <div>
+        <h2 id="titulo-contato">Fale com a gente</h2>
+        <p>Não encontrou o que procurava? Chame a gente no WhatsApp.</p>
+      </div>
+      <div class="contato-acao" id="contatos"></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap" id="rodape"></div></footer>
+
+<button class="topo-botao" id="topo-botao" type="button" aria-label="Voltar ao topo" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"></path></svg>
+</button>
+
+<script src="assets/scripts/menu.js"></script>
+<script src="assets/scripts/topo.js"></script>
+<script src="assets/scripts/config.js"></script>
+<script src="assets/scripts/inicio.js"></script>
+<script src="assets/scripts/presenca.js"></script>
+</body>
+</html>

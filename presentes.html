@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Presentes de Pedro e Ana Clara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/scripts/tema.js"></script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="marca" href="index.html"><img src="assets/img/logo.png" alt="Pedro e Ana Clara, página inicial" width="567" height="498"></a>
+    <div class="nav-links" id="menu-links">
+      <a href="index.html">Início</a>
+      <a href="index.html#local">Local</a>
+      <a href="index.html#presenca">Presença</a>
+      <a href="index.html#duvidas">Dúvidas</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="presentes.html" aria-current="page">Presentes</a>
+    </div>
+    <div class="nav-acoes">
+      <button class="tema-botao" id="tema-botao" type="button" role="switch" aria-checked="false" aria-label="Modo escuro">
+        <svg class="tema-icone lua" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 15.5A8.5 8.5 0 0 1 8.5 4a9 9 0 1 0 11.5 11.5z"></path>
+          <path d="M0-2 .6-.6 2-.6.9.3 1.3 1.7 0 .9-1.3 1.7-.9.3-2-.6-.6-.6z" transform="translate(14 5.5)"></path>
+          <path d="M0-2 .6-.6 2-.6.9.3 1.3 1.7 0 .9-1.3 1.7-.9.3-2-.6-.6-.6z" transform="translate(19 9)"></path>
+          <path d="M0-2 .6-.6 2-.6.9.3 1.3 1.7 0 .9-1.3 1.7-.9.3-2-.6-.6-.6z" transform="translate(13 11) scale(.8)"></path>
+        </svg>
+        <svg class="tema-icone sol" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"></circle>
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path>
+        </svg>
+        <span class="tema-bola"></span>
+      </button>
+      <button class="menu-botao" id="menu-botao" type="button" aria-expanded="false" aria-controls="menu-links" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path class="abre" d="M4 7h16M4 12h16M4 17h16"></path>
+          <path class="fecha" d="M6 6l12 12M18 6 6 18"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="preview" id="obrigado" hidden>
+  <div class="wrap">Obrigado pelo presente! Se o pagamento foi aprovado, já está tudo certo. <a id="recado" target="_blank" rel="noopener" hidden>Enviar um recado no WhatsApp</a></div>
+</div>
+
+<header class="hero curto">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" id="quando"></p>
+      <h1>Lista de presentes</h1>
+      <p class="lead">Sua presença já é o melhor presente. Se quiser nos dar algo a mais, cada item desta lista é simbólico: o valor chega em dinheiro na nossa conta, e nós cuidamos do resto.</p>
+    </div>
+  </div>
+</header>
+
+<section class="steps" aria-label="Como funciona">
+  <div class="wrap">
+    <ol>
+      <li><b>1</b><div><strong>Escolha um presente</strong><span>Ou digite o valor que preferir.</span></div></li>
+      <li><b>2</b><div><strong>Pague pela InfinitePay</strong><span>Você vai para a página de pagamento segura deles.</span></div></li>
+      <li><b>3</b><div><strong>O valor chega até nós</strong><span>Em dinheiro, na nossa conta.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<main>
+  <section class="livre">
+    <div class="wrap">
+      <form id="livre-form" novalidate>
+        <div>
+          <h2>Prefere escolher o valor?</h2>
+          <p id="livre-nota">Qualquer quantia é bem-vinda.</p>
+        </div>
+        <div class="campo">
+          <label for="livre-valor">Valor em reais
+            <input id="livre-valor" inputmode="decimal" autocomplete="off" placeholder="150,00">
+          </label>
+          <button class="btn" type="submit">Continuar</button>
+        </div>
+        <p class="erro" id="livre-erro" role="alert" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="filtros" aria-label="Encontre um presente">
+    <div class="wrap">
+      <div class="busca">
+        <label for="busca">Buscar presente</label>
+        <input id="busca" type="search" autocomplete="off" placeholder="Ex.: air fryer, panelas, viagem">
+      </div>
+      <div class="chips" id="atalhos" role="group" aria-label="Categorias"></div>
+      <p class="contagem" id="contagem" role="status"></p>
+    </div>
+  </section>
+
+  <section class="lista">
+    <div class="wrap" id="lista"></div>
+    <div class="wrap sem-resultado" id="sem-resultado" hidden>
+      <p>Nenhum presente encontrado.</p>
+      <button class="btn ghost" id="limpar-filtros" type="button">Ver todos os presentes</button>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap" id="rodape"></div></footer>
+
+<dialog id="pagar" aria-labelledby="pay-nome">
+  <div class="pay">
+    <div class="pay-head">
+      <h2 id="pay-nome"></h2>
+      <button class="fechar" id="fechar" type="button">Fechar</button>
+    </div>
+    <p class="pay-valor" id="pay-valor"></p>
+    <small id="pay-conferir"></small>
+    <button class="btn" id="pagar-botao" type="button">Ir para o pagamento</button>
+    <p class="demo" id="pay-erro" role="alert" hidden>O pagamento não abriu. Espere um instante e tente de novo.</p>
+  </div>
+</dialog>
+
+<button class="topo-botao" id="topo-botao" type="button" aria-label="Voltar ao topo" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"></path></svg>
+</button>
+
+<script src="assets/scripts/menu.js"></script>
+<script src="assets/scripts/topo.js"></script>
+<script src="assets/scripts/config.js"></script>
+<script src="assets/scripts/presentes.js"></script>
+</body>
+</html>
