@@ -10,8 +10,8 @@ const CONFIG = {
   },
   agenda: {
     inicio: "20270522T183000Z", // 15h30 em Brasília, em UTC
-    fim: "20270523T020000Z",    // 23h em Brasília, fim da festa. O arquivo assets/casamento.ics tem os mesmos horários
-    detalhes: "Cerimônia às 15h30, recepção logo após, no mesmo local, jantar às 19h e festa das 20h às 23h."
+    fim: "20270523T025900Z",    // 23h59 em Brasília, só porque a agenda exige um fim. O arquivo assets/casamento.ics tem os mesmos horários
+    detalhes: "Cerimônia às 15h30, recepção logo após, no mesmo local, jantar às 19h e festa às 20h."
   },
   historia: {
     paragrafos: [
@@ -33,7 +33,7 @@ const CONFIG = {
     { hora: "15h30", titulo: "Cerimônia", nota: "O momento mais esperado do dia." },
     { hora: "Logo após", titulo: "Recepção", nota: "No mesmo local, assim que a cerimônia terminar." },
     { hora: "19h", titulo: "Jantar", nota: "Vamos à mesa para celebrar juntos." },
-    { hora: "20h", titulo: "Festa", nota: "Pista aberta até as 23h." }
+    { hora: "20h", titulo: "Festa", nota: "Pista aberta." }
   ],
   // Arquivos dentro de assets/img. "foco" define o que aparece quando a foto é cortada.
   fotos: [

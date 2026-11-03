@@ -7,12 +7,12 @@ BEGIN:VEVENT
 UID:casamento-pedro-ana-clara-20270522@convite
 DTSTAMP:20261102T200000Z
 DTSTART:20270522T183000Z
-DTEND:20270523T020000Z
+DTEND:20270523T025900Z
 SUMMARY:Casamento de Pedro e Ana Clara
 LOCATION:Recanto das Palmeiras\, BR-040\, 283 - nº 156 - Chácara Paraíso
  \, Três Marias - MG\, 39205-000
 DESCRIPTION:Cerimônia às 15h30\, recepção logo após\, no mesmo local\,
-  jantar às 19h e festa das 20h às 23h.
+  jantar às 19h e festa às 20h.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Amanhã é o casamento de Pedro e Ana Clara!
