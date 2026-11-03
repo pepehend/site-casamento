@@ -15,11 +15,10 @@ const CONFIG = {
   },
   historia: {
     paragrafos: [
-      "Tudo começou em uma tarde de terça-feira, em 23 de julho de 2024. Pedro e Ana Clara se viram pela primeira vez por intermédio da avó dele, em um encontro breve, sem conversa e sem nenhuma pretensão.",
-      "Três dias depois, um churrasco mudou tudo. A mesma avó convidou Ana Clara e a família dela para se juntarem à festa, e a tia Paola deu aquela ajuda. Entre muitas risadas, os dois se conheceram melhor e trocaram o Instagram.",
-      "Ela de Três Marias, ele de Ribeirão das Neves: o que poderia dar errado? As conversas continuaram por telefone, e em 17 de agosto veio o primeiro encontro, com direito a buquê de flores, porque o noivo faz o tipo romântico. Foi naquele dia que Pedro se apaixonou e teve certeza de quem queria ao seu lado.",
-      "Em 1º de setembro de 2024, veio o pedido de namoro. Desde então, o amor e o companheirismo só aumentaram, entre viagens, refeições, muitas risadas e tudo o que aprenderam um sobre o outro.",
-      "Em 1º de agosto de 2026, Pedro apertou o peito mais uma vez e pediu Ana Clara em casamento. Agora, ele não poderia ser mais grato por chamá-la de noiva e, em breve, de esposa."
+      "Tudo começou em uma tarde de terça-feira, em 23 de julho de 2024, quando Pedro e Ana Clara se viram pela primeira vez, por intermédio da avó dele. Três dias depois, em um churrasco, entre sorrisos e boas risadas, tiveram a oportunidade de se conhecer melhor.",
+      "Ela de Três Marias, ele de Ribeirão das Neves. Mesmo com a distância, as conversas continuaram e, aos poucos, nasceu um carinho que só crescia. No dia 17 de agosto, aconteceu o primeiro encontro, acompanhado de um lindo buquê de flores e de muitos sentimentos que começavam a florescer.",
+      "Em 1º de setembro de 2024, veio o pedido de namoro. Desde então, juntos, colecionaram viagens, momentos especiais, muitas risadas e descobriram, um no outro, o verdadeiro significado do amor e do companheirismo.",
+      "No dia 1º de agosto de 2026, o amor ganhou uma nova promessa: o casamento. Agora, de mãos dadas, seguem para o capítulo mais bonito dessa história, com a certeza de que escolher um ao outro foi apenas o começo de uma vida inteira juntos!"
     ],
     marcos: [
       { data: "23/07/2024", titulo: "A primeira vez" },
@@ -56,8 +55,8 @@ const CONFIG = {
   ],
   // {prazo} é trocado pela data limite de confirmação.
   perguntas: [
-    { pergunta: "Crianças são bem-vindas?", resposta: "Sim! As crianças são muito bem-vindas. Quem tem menos de 12 anos não precisa ser informado na confirmação de presença." },
-    { pergunta: "Posso levar um acompanhante?", resposta: "Sim, desde que seja sua esposa, seu marido ou seu filho." },
+    { pergunta: "Crianças são bem-vindas?", resposta: "Sim! As crianças são muito bem-vindas." },
+    { pergunta: "Posso levar um acompanhante?", resposta: "Seu convite já traz o nome de quem foi convidado com você. Basta buscar seu nome na confirmação de presença." },
     { pergunta: "Qual é o traje?", resposta: "Sinta-se à vontade para escolher o que vestir. O importante é todos saírem bonitos nas fotos." },
     { pergunta: "Tem estacionamento?", resposta: "Sim, temos estacionamento logo em frente ao espaço." },
     { pergunta: "A festa é em lugar aberto ou fechado?", resposta: "Os dois, no mesmo espaço: a cerimônia será na área aberta, e a recepção e o jantar, na área fechada." },

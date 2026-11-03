@@ -219,22 +219,21 @@ html { scroll-padding-top: 72px; }
 .presenca { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; align-items: start; }
 .presenca-area { display: grid; gap: 12px; padding: 24px; border-radius: 8px; background: var(--tint); }
 #presenca-whatsapp { display: grid; gap: 12px; justify-items: start; }
-#presenca-form, #mural-form { display: grid; gap: 16px; }
-#presenca-form label, #presenca-form legend, #mural-form label { font-size: .94rem; font-weight: 500; }
-#presenca-form > label, #mural-form > label { display: grid; gap: 4px; }
-#presenca-acompanhantes { display: grid; gap: 10px; }
-#presenca-acompanhantes p { font-size: .94rem; font-weight: 500; }
-.acompanhante { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 10px; }
-#presenca-acompanhantes label { display: grid; gap: 4px; color: var(--muted); }
+#presenca-busca, #presenca-form, #mural-form { display: grid; gap: 16px; }
+#presenca-busca label, #presenca-form label, #presenca-form legend, #mural-form label { font-size: .94rem; font-weight: 500; }
+#presenca-busca > label, #presenca-form > label, #mural-form > label { display: grid; gap: 4px; }
 #presenca-form fieldset { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0; padding: 0; border: 0; }
 #presenca-form legend { padding: 0; margin-block-end: 6px; }
 #presenca-form .opcao { display: flex; align-items: center; gap: 6px; font-weight: 400; }
-#presenca-form input:not([type="radio"]), #presenca-form textarea, #presenca-form select, #mural-form input, #mural-form textarea {
+#presenca-busca input, #presenca-form input:not([type="checkbox"]), #presenca-form textarea, #mural-form input, #mural-form textarea {
   width: 100%; min-height: 40px; padding: 8px 10px; border-radius: 6px; font-weight: 400;
   border: 1px solid var(--muted); background: var(--bg); resize: vertical;
 }
-#presenca-form input[type="radio"] { width: 18px; height: 18px; margin: 0; accent-color: var(--cobalt); }
-#presenca-form .btn, #mural-form .btn { justify-self: start; }
+#presenca-form input[type="checkbox"] { width: 18px; height: 18px; margin: 0; accent-color: var(--cobalt); }
+#presenca-busca .btn, #presenca-form .btn, #mural-form .btn { justify-self: start; }
+.presenca-pessoas, .presenca-grupos { display: grid; gap: 8px; }
+.presenca-grupo { padding: 10px 12px; border: 1px solid var(--cobalt); border-radius: 8px; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.presenca-voltar { justify-self: start; padding: 0; border: 0; background: none; color: inherit; font: inherit; font-size: .94rem; text-decoration: underline; cursor: pointer; }
 .mural { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; align-items: start; }
 .mural-recados { display: grid; gap: 12px; }
 .mural-vazio { color: var(--muted); font-style: italic; }
@@ -301,7 +300,6 @@ html { scroll-padding-top: 72px; }
 }
 @media (max-width: 480px) {
   .chips { flex-wrap: nowrap; overflow-x: auto; padding-block-end: 12px; }
-  .acompanhante { grid-template-columns: minmax(0, 1fr); }
   .fotos { grid-template-columns: minmax(0, 1fr); }
   .foto { aspect-ratio: 4 / 3; }
 }

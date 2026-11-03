@@ -107,7 +107,7 @@
   <section class="secao faixa" id="historia" aria-labelledby="titulo-historia">
     <div class="wrap historia">
       <div class="recado-texto">
-        <h2 id="titulo-historia">Nossa história</h2>
+        <h2 id="titulo-historia">Um resumo da nossa história</h2>
         <div class="historia-texto" id="historia-texto"></div>
       </div>
       <ol class="marcos" id="marcos" aria-label="Datas importantes"></ol>
@@ -200,25 +200,23 @@
           <p>Para confirmar, chame a gente no WhatsApp.</p>
           <a class="btn" href="#contato">Confirmar pelo WhatsApp</a>
         </div>
-        <form id="presenca-form" novalidate hidden>
-          <label for="presenca-nome">Seu nome
+        <form id="presenca-busca" novalidate hidden>
+          <label for="presenca-nome">Seu nome e sobrenome
             <input id="presenca-nome" autocomplete="name" maxlength="100" required>
           </label>
-          <label for="presenca-celular">Celular com DDD
-            <input id="presenca-celular" type="tel" inputmode="numeric" autocomplete="tel" maxlength="20" placeholder="(31) 99999-9999" required>
+          <label for="presenca-final">4 últimos números do seu celular
+            <input id="presenca-final" inputmode="numeric" autocomplete="off" maxlength="4" required>
           </label>
+          <button class="btn" id="presenca-buscar" type="submit">Buscar meu convite</button>
+          <p class="erro" id="presenca-busca-erro" role="alert" hidden></p>
+          <div class="presenca-grupos" id="presenca-grupos" hidden></div>
+        </form>
+        <form id="presenca-form" novalidate hidden>
           <fieldset>
-            <legend>Você vai comparecer?</legend>
-            <label class="opcao"><input type="radio" name="comparecer" value="sim"> Sim, vou</label>
-            <label class="opcao"><input type="radio" name="comparecer" value="nao"> Não poderei ir</label>
+            <legend>Desmarque quem não poderá ir</legend>
+            <div class="presenca-pessoas" id="presenca-pessoas"></div>
           </fieldset>
-          <label for="presenca-quantos" id="presenca-pessoas" hidden>Quantos acompanhantes vêm com você? (12 anos ou mais)
-            <input id="presenca-quantos" type="number" inputmode="numeric" min="0" max="9" value="0">
-          </label>
-          <div id="presenca-acompanhantes" hidden>
-            <p>Dados de cada acompanhante</p>
-          </div>
-          <label for="presenca-restricoes" id="presenca-comida" hidden>Alguma restrição alimentar? (opcional)
+          <label for="presenca-restricoes" id="presenca-comida">Alguma restrição alimentar? (opcional)
             <input id="presenca-restricoes" maxlength="200">
           </label>
           <label for="presenca-mensagem">Mensagem para os noivos (opcional)
@@ -231,6 +229,7 @@
           </div>
           <button class="btn" id="presenca-enviar" type="submit">Enviar resposta</button>
           <p class="erro" id="presenca-erro" role="alert" hidden></p>
+          <button class="presenca-voltar" id="presenca-voltar" type="button">Buscar outro nome</button>
         </form>
         <p class="presenca-sucesso" id="presenca-sucesso" role="status" hidden></p>
       </div>
