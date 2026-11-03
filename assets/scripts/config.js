@@ -45,6 +45,9 @@ const CONFIG = {
     url: "https://script.google.com/macros/s/AKfycbzFPQ_y6P9YhNXHReLSt5rQ99y9OVlUYeMVqbc9-eXCy3tH6wQVOzExCgYPQQNznPY/exec", // endereço do Apps Script. Vazio mostra o botão do WhatsApp
     prazo: "2027-02-28" // data limite para responder
   },
+  galeria: {
+    emTeste: true // true abre a página antes do casamento, só para testes. Mude para false ao terminar de testar
+  },
   hospedagens: [
     { nome: "Pousada Rural Veredas", local: "Rod. Pres. Juscelino Kubitschek, 6020", telefone: "(38) 99168-5346", mapa: "https://maps.app.goo.gl/4JRb7VEqDVr22wdQA" },
     { nome: "Pousada Sítio do Terrão", local: "Rod. Paulo Fagundes da Costa", telefone: "(38) 98816-3732", mapa: "https://maps.app.goo.gl/MwRjyShAUT8KbpuT6" },

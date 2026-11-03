@@ -1,10 +1,9 @@
-/* Menu suspenso da barra de navegação no celular. */
+/* Menu suspenso com as seções da página inicial. */
 const menuBotao = document.getElementById("menu-botao");
 const menuLinks = document.getElementById("menu-links");
 
 function definirMenu(aberto) {
   menuBotao.setAttribute("aria-expanded", aberto);
-  menuBotao.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
   menuLinks.classList.toggle("aberto", aberto);
 }
 

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Galeria de Pedro e Ana Clara</title>
+<meta name="description" content="Envie as fotos que você tirou no casamento de Pedro e Ana Clara e veja as fotos da festa.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Pedro e Ana Clara">
+<meta property="og:title" content="Galeria do casamento de Pedro e Ana Clara">
+<meta property="og:description" content="Envie as fotos que você tirou no casamento de Pedro e Ana Clara e veja as fotos da festa.">
+<meta property="og:url" content="https://www.pedroeana.site/galeria.html">
+<meta property="og:image" content="https://www.pedroeana.site/assets/img/compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pedro e Ana Clara, 22 de maio de 2027, Três Marias, MG">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.pedroeana.site/galeria.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/scripts/tema.js"></script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="marca" href="index.html"><img src="assets/img/logo.png" alt="Pedro e Ana Clara, página inicial" width="567" height="498"></a>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="presentes.html">Presentes</a>
+      <a href="galeria.html" aria-current="page">Galeria</a>
+      <div class="nav-sobre">
+        <button class="nav-sobre-botao" id="menu-botao" type="button" aria-expanded="false" aria-controls="menu-links">Sobre<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+        <div class="nav-menu" id="menu-links">
+          <a href="index.html#historia">Nossa história</a>
+          <a href="index.html#mural">Mural de recados</a>
+          <a href="index.html#programacao">Programação</a>
+          <a href="index.html#local">Local</a>
+          <a href="index.html#hospedagem">Onde ficar</a>
+          <a href="index.html#presenca">Confirmar presença</a>
+          <a href="index.html#duvidas">Dúvidas</a>
+          <a href="index.html#contato">Contato</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-acoes">
+      <button class="tema-botao" id="tema-botao" type="button" role="switch" aria-checked="false" aria-label="Modo escuro">
+        <svg class="tema-icone lua" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 15.5A8.5 8.5 0 0 1 8.5 4a9 9 0 1 0 11.5 11.5z"></path>
+          <path d="M0-2 .6-.6 2-.6.9.3 1.3 1.7 0 .9-1.3 1.7-.9.3-2-.6-.6-.6z" transform="translate(14 5.5)"></path>
+          <path d="M0-2 .6-.6 2-.6.9.3 1.3 1.7 0 .9-1.3 1.7-.9.3-2-.6-.6-.6z" transform="translate(19 9)"></path>
+          <path d="M0-2 .6-.6 2-.6.9.3 1.3 1.7 0 .9-1.3 1.7-.9.3-2-.6-.6-.6z" transform="translate(13 11) scale(.8)"></path>
+        </svg>
+        <svg class="tema-icone sol" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"></circle>
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path>
+        </svg>
+        <span class="tema-bola"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero curto galeria-topo">
+  <div class="wrap">
+    <div class="galeria-titulo">
+      <p class="eyebrow" id="quando"></p>
+      <h1>Galeria de fotos</h1>
+      <p class="lead">Tirou fotos no casamento? Mande para a gente! Elas aparecem aqui depois que nós conferirmos.</p>
+    </div>
+    <form class="galeria-envio" id="galeria-form" novalidate hidden>
+      <h2 id="titulo-envio">Envie suas fotos</h2>
+      <label for="galeria-nome">Seu nome (opcional)
+        <input id="galeria-nome" autocomplete="name" maxlength="60">
+      </label>
+      <div class="presenca-robo" aria-hidden="true">
+        <label for="galeria-site">Não preencha este campo
+          <input id="galeria-site" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+      <label class="btn galeria-escolher" id="galeria-escolher" for="galeria-arquivos">Escolher e enviar fotos</label>
+      <input class="galeria-arquivos" id="galeria-arquivos" type="file" accept="image/*" multiple>
+      <p class="galeria-status" id="galeria-status" role="status" hidden></p>
+    </form>
+  </div>
+</header>
+
+<main>
+  <section class="secao" id="galeria-fechada" hidden>
+    <div class="wrap">
+      <p class="galeria-aviso" id="galeria-aviso"></p>
+    </div>
+  </section>
+
+  <div id="galeria-conteudo" hidden>
+    <section class="secao" aria-labelledby="titulo-fotos">
+      <div class="wrap galeria">
+        <h2 id="titulo-fotos">Fotos da festa</h2>
+        <p class="galeria-vazia" id="galeria-vazia">Carregando as fotos...</p>
+        <ul class="galeria-fotos" id="galeria-fotos"></ul>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap" id="rodape"></div></footer>
+
+<dialog class="foto-dialog" id="foto-dialog" aria-label="Foto ampliada">
+  <img id="foto-grande" alt="" referrerpolicy="no-referrer">
+  <div class="foto-acoes">
+    <span class="foto-autor" id="foto-autor"></span>
+    <div class="foto-botoes">
+      <button class="btn ghost" id="foto-anterior" type="button" aria-label="Foto anterior">‹</button>
+      <button class="btn ghost" id="foto-proxima" type="button" aria-label="Próxima foto">›</button>
+      <a class="btn ghost" id="foto-baixar" target="_blank" rel="noopener noreferrer">Baixar</a>
+      <button class="btn" id="foto-fechar" type="button">Fechar</button>
+    </div>
+  </div>
+</dialog>
+
+<button class="topo-botao" id="topo-botao" type="button" aria-label="Voltar ao topo" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"></path></svg>
+</button>
+
+<script src="assets/scripts/menu.js"></script>
+<script src="assets/scripts/topo.js"></script>
+<script src="assets/scripts/config.js"></script>
+<script src="assets/scripts/galeria.js"></script>
+</body>
+</html>

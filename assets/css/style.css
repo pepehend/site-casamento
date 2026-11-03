@@ -144,9 +144,8 @@ html { scroll-padding-top: 72px; }
   position: sticky; top: 0; z-index: 10; padding-top: env(safe-area-inset-top, 0px);
   border-bottom: 1px solid var(--line); background: var(--surface);
 }
-.nav .wrap { display: flex; align-items: center; gap: 4px 24px; padding-block: 12px; }
+.nav .wrap { position: relative; display: flex; align-items: center; gap: 4px 24px; padding-block: 12px; }
 .nav-acoes { display: flex; align-items: center; gap: 12px; }
-.menu-botao { display: none; }
 .marca { display: block; margin-inline-end: auto; }
 .marca img { display: block; width: auto; height: 34px; filter: var(--logo-filtro); }
 .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; }
@@ -164,8 +163,22 @@ html { scroll-padding-top: 72px; }
 .tema-icone.sol { right: 8px; stroke: var(--cobalt-ink); stroke-width: 2; stroke-linecap: round; }
 .tema-botao[aria-checked="true"] .lua { display: block; }
 .tema-botao[aria-checked="true"] .sol { display: none; }
-.nav-links a { color: var(--muted); font-weight: 500; text-decoration: none; padding-block: 4px; }
-.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--cobalt); }
+.nav-links > a, .nav-sobre-botao { color: var(--muted); font-weight: 500; text-decoration: none; padding-block: 4px; }
+.nav-links > a:hover, .nav-links > a[aria-current="page"], .nav-sobre-botao:hover, .nav-sobre-botao[aria-expanded="true"] { color: var(--cobalt); }
+.nav-sobre { position: relative; }
+.nav-sobre-botao { display: inline-flex; align-items: center; gap: 2px; padding-inline: 0; border: 0; background: none; font: inherit; font-weight: 500; cursor: pointer; }
+.nav-sobre-botao svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; }
+.nav-sobre-botao[aria-expanded="true"] svg { transform: rotate(180deg); }
+/* No computador, o menu abre como uma caixa sob o Sobre. No celular, ocupa a largura toda. */
+.nav-menu {
+  display: none; position: absolute; top: calc(100% + 14px); right: -16px;
+  width: 260px; padding: 4px 16px 8px; border: 1px solid var(--line); border-top: 0; border-radius: 0 0 8px 8px;
+  background: var(--surface); box-shadow: 0 12px 24px rgb(17 17 78 / .18);
+}
+.nav-menu.aberto { display: grid; }
+.nav-menu a { padding-block: 10px; color: var(--muted); font-weight: 500; text-decoration: none; }
+.nav-menu a + a { border-top: 1px solid var(--line); }
+.nav-menu a:hover { color: var(--cobalt); }
 
 .hero.curto .wrap { grid-template-columns: minmax(0, 1fr); padding-block: 40px 36px; }
 .hero.curto h1 { font-size: clamp(2.5rem, 7vw, 4rem); }
@@ -225,7 +238,7 @@ html { scroll-padding-top: 72px; }
 #presenca-form fieldset { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0; padding: 0; border: 0; }
 #presenca-form legend { padding: 0; margin-block-end: 6px; }
 #presenca-form .opcao { display: flex; align-items: center; gap: 6px; font-weight: 400; }
-#presenca-busca input, #presenca-form input:not([type="checkbox"]), #presenca-form textarea, #mural-form input, #mural-form textarea {
+#presenca-busca input, #presenca-form input:not([type="checkbox"]), #presenca-form textarea, #mural-form input, #mural-form textarea, #galeria-nome {
   width: 100%; min-height: 40px; padding: 8px 10px; border-radius: 6px; font-weight: 400;
   border: 1px solid var(--muted); background: var(--bg); resize: vertical;
 }
@@ -270,6 +283,40 @@ html { scroll-padding-top: 72px; }
 .topo-botao:hover { filter: brightness(1.12); }
 .topo-botao svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; }
 
+.hero.galeria-topo .wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 26em); gap: 40px; align-items: center; }
+.galeria-envio { display: grid; gap: 16px; padding: 24px; border-radius: 8px; background: var(--tint); }
+.galeria-envio[hidden] { display: none; }
+.galeria-envio h2 { font-size: 1.75rem; }
+.galeria-envio > label:not(.btn) { display: grid; gap: 4px; font-size: .94rem; font-weight: 500; }
+.galeria-escolher { justify-self: start; }
+.galeria-escolher.desativado { opacity: .6; pointer-events: none; }
+.galeria-arquivos { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.galeria-escolher:has(+ .galeria-arquivos:focus-visible) { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+.galeria-status { font-weight: 500; }
+.galeria { display: grid; gap: 20px; }
+.galeria-vazia, .galeria-aviso { color: var(--muted); font-style: italic; }
+.galeria-aviso { font-size: 1.125rem; }
+.galeria-fotos { list-style: none; margin: 0; padding: 0; columns: 3 220px; column-gap: 12px; }
+.galeria-fotos li { break-inside: avoid; margin-block-end: 12px; }
+.galeria-fotos button { display: block; width: 100%; padding: 0; border: 0; border-radius: 8px; overflow: hidden; background: var(--tint); cursor: zoom-in; }
+.galeria-fotos img { display: block; width: 100%; height: auto; min-height: 120px; }
+dialog.foto-dialog { width: min(1100px, calc(100vw - 32px)); padding: 16px; }
+.foto-dialog[open] { display: grid; gap: 12px; }
+.foto-dialog img { display: block; width: 100%; max-height: calc(100dvh - 140px); object-fit: contain; border-radius: 6px; background: var(--tint); }
+.foto-acoes { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.foto-autor { color: var(--muted); font-size: .94rem; }
+.foto-botoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.foto-botoes .btn[aria-label] { min-width: 44px; font-size: 1.25rem; }
+
+/* Em telas estreitas, o envio de fotos desce para baixo do título e tudo fica centralizado. */
+@media (max-width: 900px) {
+  .hero.galeria-topo .wrap { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; }
+  .galeria-topo .lead { margin-inline: auto; }
+  .galeria-envio { width: min(100%, 26em); justify-items: center; }
+  .galeria-envio > label:not(.btn) { width: 100%; }
+  .galeria-escolher { justify-self: center; }
+}
+
 @media (max-width: 760px) {
   .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 36px 32px; }
   .arch { aspect-ratio: 3 / 1; border-radius: 8px; }
@@ -280,23 +327,31 @@ html { scroll-padding-top: 72px; }
   .contato-pessoa { justify-items: start; }
 }
 @media (max-width: 760px) {
-  .menu-botao {
-    display: grid; place-items: center; width: 40px; height: 40px; padding: 0;
-    border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--ink); cursor: pointer;
-  }
-  .menu-botao svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
-  .menu-botao .fecha, .menu-botao[aria-expanded="true"] .abre { display: none; }
-  .menu-botao[aria-expanded="true"] .fecha { display: block; }
-  .nav-links {
-    display: none; position: absolute; top: 100%; left: 0; right: 0;
+  .nav .wrap { gap: 4px 14px; }
+  .nav-links { gap: 4px 14px; }
+  /* No celular, o tema vira um botão redondo que mostra só o ícone do tema atual. */
+  .tema-botao { width: 40px; height: 40px; border-radius: 50%; }
+  .tema-bola { display: none; }
+  .tema-icone, .tema-icone.lua, .tema-icone.sol { top: 50%; left: 50%; right: auto; transform: translate(-50%, -50%); }
+  .nav-sobre { position: static; }
+  .nav-menu {
+    top: calc(100% + 1px); left: 0; right: 0; width: auto; border-inline: 0; border-radius: 0; box-shadow: none;
     padding-block: 4px 12px;
     padding-left: max(16px, env(safe-area-inset-left, 0px));
     padding-right: max(16px, env(safe-area-inset-right, 0px));
-    border-bottom: 1px solid var(--line); background: var(--surface);
   }
-  .nav-links.aberto { display: grid; gap: 0; }
-  .nav-links a { padding-block: 12px; font-size: 1.0625rem; }
-  .nav-links a + a { border-top: 1px solid var(--line); }
+  .nav-menu a { padding-block: 12px; font-size: 1.0625rem; }
+}
+@media (max-width: 400px) {
+  .nav .wrap, .nav-links { gap: 4px 10px; }
+  .nav-links > a, .nav-sobre-botao { font-size: .94rem; }
+  .marca img { height: 30px; }
+  .tema-botao { width: 36px; height: 36px; }
+}
+/* Em telas muito estreitas, o logo sai da barra para os links caberem em uma linha. O Início continua levando à página inicial. */
+@media (max-width: 374px) {
+  .marca { display: none; }
+  .nav-links { margin-inline-end: auto; flex-wrap: nowrap; }
 }
 @media (max-width: 480px) {
   .chips { flex-wrap: nowrap; overflow-x: auto; padding-block-end: 12px; }
