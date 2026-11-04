@@ -46,7 +46,7 @@ const CONFIG = {
     prazo: "2027-02-28" // data limite para responder
   },
   galeria: {
-    emTeste: true // true abre a página antes do casamento, só para testes. Mude para false ao terminar de testar
+    emTeste: false // true abre a página antes do casamento, só para testes. Com false, ela abre sozinha no dia do casamento
   },
   hospedagens: [
     { nome: "Pousada Rural Veredas", local: "Rod. Pres. Juscelino Kubitschek, 6020", telefone: "(38) 99168-5346", mapa: "https://maps.app.goo.gl/4JRb7VEqDVr22wdQA" },
