@@ -73,8 +73,8 @@ function abrirFoto(i) {
   if (!$("foto-dialog").open) $("foto-dialog").showModal();
 }
 
-// Reduz a foto no próprio celular para o envio ser rápido. O resultado é sempre JPEG.
-async function prepararFoto(arquivo) {
+// Reduz a foto no próprio celular para o envio ser rápido. O resultado é JPEG.
+async function reduzirFoto(arquivo) {
   const url = URL.createObjectURL(arquivo);
   try {
     const imagem = new Image();
@@ -88,6 +88,27 @@ async function prepararFoto(arquivo) {
     return tela.toDataURL("image/jpeg", QUALIDADE).split(",")[1];
   } finally {
     URL.revokeObjectURL(url);
+  }
+}
+
+const ehHeic = (arquivo) => /image\/hei[cf]/i.test(arquivo.type) || /\.hei[cf]$/i.test(arquivo.name);
+
+function lerArquivo(arquivo) {
+  return new Promise((resolver, rejeitar) => {
+    const leitor = new FileReader();
+    leitor.onload = () => resolver(String(leitor.result).split(",")[1]);
+    leitor.onerror = () => rejeitar(leitor.error);
+    leitor.readAsDataURL(arquivo);
+  });
+}
+
+// Fora do Safari, o navegador não abre as fotos HEIC do iPhone. Elas vão inteiras, e o Drive sabe mostrá-las.
+async function prepararFoto(arquivo) {
+  try {
+    return await reduzirFoto(arquivo);
+  } catch (erro) {
+    if (!ehHeic(arquivo)) throw erro;
+    return lerArquivo(arquivo);
   }
 }
 
